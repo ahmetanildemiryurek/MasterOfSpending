@@ -13,5 +13,8 @@
     <string name="euroText">€</string>
     <string name="sterlinText">£</string>
     <string name="fragmentExpenseListAdd">EKLE</string>
+    <string name="expenseDetailsNameArea">Harcama Adı\n</string>
+    <string name="spendingdetails">Harcama Detayı\n</string>
+    <string name="deleteButton">SİL</string>
 
 </resources>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.ui.fragments.expenseDetailsFragment.ExpenseDetailsFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/expensesContainerTop"
+        android:layout_width="match_parent"
+        android:layout_height="213dp"
+        android:layout_marginTop="204dp"
+        android:background="#fff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="381dp" />
+
+        <TextView
+            android:id="@+id/expenseDetailsName"
+            android:layout_width="184dp"
+            android:layout_height="20dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:text="@string/expenseDetailsNameArea"
+            android:textColor="#CC0C0C"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/expenseDetails"
+            android:layout_width="342dp"
+            android:layout_height="111dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:text="@string/spendingdetails"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.789"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgMoney"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="224dp"
+            android:src="@drawable/price_icon"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            tools:layout_editor_absoluteY="168dp" />
+
+        <TextView
+            android:id="@+id/expenseDetailsPrice"
+            android:layout_width="77dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="12dp"
+            android:text=" "
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imgMoney"
+            app:layout_constraintStart_toEndOf="@+id/imgMoney"
+            app:layout_constraintTop_toTopOf="@+id/imgMoney"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/expenceDetailsNumber"
+            android:layout_width="26dp"
+            android:layout_height="23dp"
+            android:layout_marginStart="4dp"
+            android:gravity="center"
+            android:text=" "
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.504" />
+
+        <TextView
+            android:id="@+id/currencyDetailsType"
+            android:layout_width="19dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="96dp"
+            android:text=" "
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imgMoney"
+            app:layout_constraintStart_toEndOf="@+id/imgMoney"
+            app:layout_constraintTop_toTopOf="@+id/imgMoney"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="100dp"
+        android:layout_height="46dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="#FF0000"
+        android:text="@string/deleteButton"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/expensesContainerTop" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

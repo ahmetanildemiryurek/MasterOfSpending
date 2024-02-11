@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">MasterOfSpending</string>
+    <string name="expense_name">Harcama Adı</string>
+    <string name="letsGoText">Hadi Başlayalım !</string>
+    <string name="add_expense">EKLE</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="addDetails">Açıklama</string>
+    <string name="textViewHeader1">Harcama Ekle</string>
+    <string name="detailsPageAddButton">EKLE</string>
+    <string name="addDetailsPageExpenseEditText">Harcama Türü</string>
+    <string name="tlText">₺</string>
+    <string name="dolarText">$</string>
+    <string name="euroText">€</string>
+    <string name="sterlinText">£</string>
+    <string name="fragmentExpenseListAdd">EKLE</string>
+
 </resources>

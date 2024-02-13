@@ -23,17 +23,9 @@
             android:id="@+id/action_expenseListFragment_to_expenseAddFragment"
             app:destination="@id/expenseAddFragment" />
         <action
-            android:id="@+id/action_expenseListFragment_to_expenseDetails"
-            app:destination="@id/expenseDetails" />
-    </fragment>
-    <fragment
-        android:id="@+id/expenseDetails"
-        android:name="com.marazanil.masterofspending.view.ui.fragments.expenseDetailsFragment.ExpenseDetailsFragment"
-        android:label="fragment_expense_details"
-        tools:layout="@layout/fragment_expense_details" >
-        <action
-            android:id="@+id/action_expenseDetails_to_expenseListFragment"
-            app:destination="@id/expenseListFragment" />
+            android:id="@+id/action_to_expenseListFragment_to_expenseDetailsFragment"
+            app:destination="@id/expenseDetailsFragment" />
+
     </fragment>
 
     <fragment
@@ -43,6 +35,16 @@
         tools:layout="@layout/fragment_expense_add" >
         <action
             android:id="@+id/action_expenseAddFragment_to_expenseListFragment"
+            app:destination="@id/expenseListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/expenseDetailsFragment"
+        android:name="com.marazanil.masterofspending.view.ui.fragments.expenseDetailsFragment.ExpenseDetailsFragment"
+        android:label="fragment_expense_details"
+        tools:layout="@layout/fragment_expense_details" >
+        <action
+            android:id="@+id/action_expenseDetailsFragment_to_expenseListFragment"
             app:destination="@id/expenseListFragment" />
     </fragment>
 </navigation>

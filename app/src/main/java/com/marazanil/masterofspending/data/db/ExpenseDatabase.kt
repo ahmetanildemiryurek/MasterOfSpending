@@ -22,7 +22,7 @@ abstract class ExpenseDatabase : RoomDatabase() {
                 instance = Room.databaseBuilder(
                     context,
                     ExpenseDatabase::class.java,
-                    "student.db"
+                    "EXPENSES DATABASE"
                 ).allowMainThreadQueries()
                     .build()
             }

@@ -21,7 +21,7 @@ data class ExpenseEntity(
     @ColumnInfo(name = "expenseId") var expenseId: Long,
     @ColumnInfo(name = "expenseName") var expenseName: String,
     @ColumnInfo(name = "expenseDetails") var expenseDetails: String?,
-    @ColumnInfo(name = "expenseNumber") var expenseNumber: Int,
+    @ColumnInfo(name = "expenseNumber") var expenseNumber: Long? = null,
     @ColumnInfo(name = "expensePrice") var expensePrice: String,
     @ColumnInfo(name = "currencyType") var currencyType: String,
 )

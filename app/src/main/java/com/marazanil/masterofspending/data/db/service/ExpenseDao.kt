@@ -11,8 +11,7 @@ interface ExpenseDao {
 
 
     @Insert
-     fun insertExpense(expense: ExpenseEntity)
-
+    fun insertExpense(expense: ExpenseEntity): Long
     @Delete
      fun deleteExpense(expense: ExpenseEntity)
     @Query("SELECT * FROM expenses")

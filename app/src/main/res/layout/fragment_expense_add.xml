@@ -77,15 +77,42 @@
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/TextInputLayoutExpensePrice"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        app:boxCornerRadiusBottomEnd="30dp"
+        app:boxCornerRadiusBottomStart="30dp"
+        app:boxCornerRadiusTopEnd="30dp"
+        app:boxCornerRadiusTopStart="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextInputLayoutExpense">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextExpensePrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/addDetailsPageExpensePriceEditText"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
     <ImageView
         android:id="@+id/backButton"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:clickable="true"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:src="@drawable/ic_back_icon"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:focusable="true" />
+
 
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chipGroupCurrency"

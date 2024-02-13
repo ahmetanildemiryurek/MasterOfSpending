@@ -38,7 +38,11 @@ android {
         viewBinding true
         dataBinding = true
     }
+    kapt {
+        correctErrorTypes true
+    }
 }
+
 
 dependencies {
 
@@ -73,10 +77,8 @@ dependencies {
     implementation "com.squareup.okhttp3:logging-interceptor:$retrofitInterceptorVersion"
     implementation "com.squareup.retrofit2:converter-simplexml:$retrofitVersion"
     /* Hilt */
-    implementation "com.google.dagger:hilt-android:$daggerHiltVersion"
-    kapt "com.google.dagger:hilt-android-compiler:$daggerHiltVersion"
-    kapt "com.google.dagger:hilt-compiler:$daggerHiltVersion"
-    kapt "androidx.hilt:hilt-compiler:$daggerHiltCompilerVersion"
+    implementation "com.google.dagger:hilt-android:2.50"
+    kapt "com.google.dagger:hilt-compiler:2.50"
     /* Google Services */
     implementation "com.google.android.gms:play-services-location:$googleServicesVersion"
 

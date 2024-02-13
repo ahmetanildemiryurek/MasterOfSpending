@@ -20,8 +20,6 @@ class ExpenseListAdapter(
     override fun onBindViewHolder(holder: ExpenseViewHolder, position: Int) {
         val expense = expenses[position]
         with(holder.binding) {
-            // Assume you have TextViews with IDs: expenseName, expensePrice, etc.
-            // Set their text or click listeners here.
         }
     }
 

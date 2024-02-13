@@ -14,19 +14,14 @@ import kotlinx.parcelize.Parcelize
  * sınıf olarak göndermek içinde Parcelable sınıfından inherit edilmesi gereklidir yoksa sınıf olarak veri taşınamaz!
  *
  */
-const val EXPENSE_TABLE_NAME = "expenses"
 
-@Parcelize
-@Entity(tableName = EXPENSE_TABLE_NAME)
-
+@Entity(tableName = "expenses")
 data class ExpenseEntity(
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "expenseId") var expenseId: Long,
     @ColumnInfo(name = "expenseName") var expenseName: String,
     @ColumnInfo(name = "expenseDetails") var expenseDetails: String?,
     @ColumnInfo(name = "expenseNumber") var expenseNumber: Int,
     @ColumnInfo(name = "expensePrice") var expensePrice: String,
     @ColumnInfo(name = "currencyType") var currencyType: String,
-) : Parcelable {
-    @IgnoredOnParcel
-    @PrimaryKey(autoGenerate = true)
-    var uid: Int = 0
-}
+)

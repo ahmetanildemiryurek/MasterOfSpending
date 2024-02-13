@@ -13,15 +13,15 @@ buildscript {
         gsonVersion = '2.9.1'
         retrofitInterceptorVersion = '5.0.0-alpha.10'
         moshiConverterVersion = '2.9.0'
-        daggerHiltVersion = '2.43.2'
-        daggerHiltCompilerVersion = '1.0.0'
+        daggerHiltVersion = '2.50'
+        daggerHiltCompilerVersion = '2.50'
         googleServicesVersion = '21.0.0'
         compressorVersion = '3.0.1'
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:7.2.2'
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
-        classpath "com.google.dagger:hilt-android-gradle-plugin:$daggerHiltVersion"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:2.50"
     }
 }
 plugins {

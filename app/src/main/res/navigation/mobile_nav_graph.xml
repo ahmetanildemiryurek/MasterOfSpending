@@ -36,5 +36,9 @@
         android:id="@+id/expenseAddFragment"
         android:name="com.marazanil.masterofspending.view.ui.fragments.expenseAddFragment.ExpenseAddFragment"
         android:label="fragment_expense_add"
-        tools:layout="@layout/fragment_expense_add" />
+        tools:layout="@layout/fragment_expense_add" >
+        <action
+            android:id="@+id/action_expenseAddFragment_to_expenseListFragment"
+            app:destination="@id/expenseListFragment" />
+    </fragment>
 </navigation>

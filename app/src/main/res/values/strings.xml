@@ -8,6 +8,7 @@
     <string name="textViewHeader1">Harcama Ekle</string>
     <string name="detailsPageAddButton">EKLE</string>
     <string name="addDetailsPageExpenseEditText">Harcama Türü</string>
+    <string name="addDetailsPageExpensePriceEditText">Harcama Fiyatı</string>
     <string name="tlText">₺</string>
     <string name="dolarText">$</string>
     <string name="euroText">€</string>

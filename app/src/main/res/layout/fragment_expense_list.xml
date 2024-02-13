@@ -7,32 +7,30 @@
     tools:context=".view.ui.fragments.expenseListFragment.ExpenseListFragment">
 
 
-    <androidx.recyclerview.widget.RecyclerView
+  <!--  <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/expenseListCardView"
         android:layout_width="match_parent"
-        android:layout_height="600dp"
-        android:layout_marginStart="1dp"
+        android:layout_height="0dp"
         android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/addBtn" />
+-->
 
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/fabAddExpense"
+    <Button
+        android:id="@+id/addBtn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="tıkla"/>
+
+   <!-- <Button
+        android:id="@+id/buttonAddExpense"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:text="@string/add_expense"
-        android:textColor="@color/white"
-        app:backgroundTint="#f7b733"
-        app:cornerRadius="15dp"
-        app:iconTint="@color/white"
+        android:text="Ekle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/expenseListCardView"
-        app:layout_constraintVertical_bias="1.0" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintStart_toStartOf="parent" />
+-->
+</androidx.constraintlayout.widget.ConstraintLayout>

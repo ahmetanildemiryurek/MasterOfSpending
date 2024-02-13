@@ -34,7 +34,7 @@ class ExpenseAddFragment : Fragment() {
 
         binding.backButton.setOnClickListener {
             findNavController().navigate(R.id.action_expenseAddFragment_to_expenseListFragment)
-            Toast.makeText(context , "geri döndük!" , Toast.LENGTH_SHORT).show()        }
+            Toast.makeText(context , "Harcamalar Ekranına Geri Dönüldü !" , Toast.LENGTH_SHORT).show()        }
     }
 
     override fun onDestroyView() {

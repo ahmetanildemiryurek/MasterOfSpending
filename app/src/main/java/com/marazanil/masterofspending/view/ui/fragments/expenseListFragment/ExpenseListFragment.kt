@@ -24,16 +24,11 @@ class ExpenseListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Initialize your RecyclerView with the ExpenseListAdapter here
-        binding.addBtn.setOnClickListener {
-            Toast.makeText(context , "buton tıklandı!" , Toast.LENGTH_SHORT).show()
-Log.d("aaa","tıklandı")
+       binding.buttonAddExpense.setOnClickListener {
+            findNavController().navigate(R.id.action_expenseListFragment_to_expenseAddFragment)
+            Toast.makeText(context , "Harcama Ekleme Ekranına Yönlendirildi !" , Toast.LENGTH_SHORT).show()
+           //Log.d("aaa","tıklandı")
         }
-
-     /*   binding.buttonAddExpense.setOnClickListener {
-            //findNavController().navigate(R.id.action_expenseListFragment_to_expenseAddFragment)
-            Toast.makeText(context , "buton tıklandı!" , Toast.LENGTH_SHORT).show()
-        } */
     }
 
     override fun onDestroyView() {

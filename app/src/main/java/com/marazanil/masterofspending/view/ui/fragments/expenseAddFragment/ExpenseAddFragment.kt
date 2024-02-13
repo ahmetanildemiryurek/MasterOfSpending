@@ -57,7 +57,7 @@ class ExpenseAddFragment : Fragment() {
             expenseId = 0, // otomatik id ataması yapması için sıfır verdim
             expenseName = expenseName,
             expenseDetails = expenseDetails,
-            expenseNumber = 1,
+            expenseNumber = null,// otomatik numara ataması yapması için sıfır verdim
             expensePrice = expensePrice,
             currencyType = currencyType
         )
@@ -66,7 +66,6 @@ class ExpenseAddFragment : Fragment() {
         val expenseDao = ExpenseDatabase.getDatabase(requireContext())?.expenseDao()
         expenseDao?.insertExpense(expense)
         Toast.makeText(context, "Harcama başarıyla kaydedildi", Toast.LENGTH_SHORT).show()
-        showSavedExpenses()
         logSavedExpenses()
         findNavController().navigate(R.id.action_expenseAddFragment_to_expenseListFragment)
 
@@ -81,15 +80,8 @@ class ExpenseAddFragment : Fragment() {
             else -> "TL" // Varsayılan değer
         }
     }
-    private fun showSavedExpenses() {
-        val expenseDao = ExpenseDatabase.getDatabase(requireContext())?.expenseDao()
-        val expenses = expenseDao?.getAllExpenses()
-        expenses?.let {
-            for (expense in it) {
-                Toast.makeText(context, "ID: ${expense.expenseId}, Name: ${expense.expenseName}, Price: ${expense.expensePrice}", Toast.LENGTH_LONG).show()
-            }
-        }
-    }
+
+
 
     private fun logSavedExpenses() {
         val expenseDao = ExpenseDatabase.getDatabase(requireContext())?.expenseDao()

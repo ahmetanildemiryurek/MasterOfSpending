@@ -8,10 +8,8 @@ import com.marazanil.masterofspending.data.db.entity.ExpenseEntity
 
 @Dao
 interface ExpenseDao {
-
-
     @Insert
-    fun insertExpense(expense: ExpenseEntity): Long
+    fun insertExpense(expense: ExpenseEntity)
     @Delete
      fun deleteExpense(expense: ExpenseEntity)
     @Query("SELECT * FROM expenses")

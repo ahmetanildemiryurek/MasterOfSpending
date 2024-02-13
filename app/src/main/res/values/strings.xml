@@ -17,5 +17,6 @@
     <string name="expenseDetailsNameArea">Harcama Adı\n</string>
     <string name="spendingdetails">Harcama Detayı\n</string>
     <string name="deleteButton">SİL</string>
+    <string name="emptyString" />
 
 </resources>

@@ -25,25 +25,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        app:cardCornerRadius="20dp">
+        app:cardCornerRadius="30dp">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/expenseListConstraint"
         android:layout_width="match_parent"
         android:layout_height="130dp"
-        android:layout_marginBottom="5dp"
-        android:background="#fff"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="#80E498">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_end="381dp" />
+            app:layout_constraintGuide_percent="0.07" />
 
         <TextView
             android:id="@+id/expenseName"
@@ -54,53 +52,62 @@
             android:layout_marginEnd="16dp"
             android:fontFamily="sans-serif-light"
             android:gravity="center"
-            android:text="@{expense.expenseName}"
-            android:textColor="#CC0C0C"
-            android:textSize="14sp"
+            android:text="@string/emptyString"
+            android:textColor="#784B07"
+            android:textSize="20sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/imgMoney"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.391"
+            app:layout_constraintHorizontal_bias="0.478"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.518" />
 
         <ImageView
             android:id="@+id/imgMoney"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:layout_marginStart="144dp"
-            android:src="@drawable/price_icon"
-            app:layout_constraintHorizontal_bias="0.5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/price_icon_type"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.576"
             app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="93dp" />
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/expensePrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="@{expense.expensePrice}"
+            android:layout_marginStart="20dp"
+            android:text="@string/emptyString"
+            android:textAlignment="viewStart"
             android:textColor="@color/black"
-            android:textSize="12sp"
+            android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/imgMoney"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.127"
             app:layout_constraintStart_toEndOf="@+id/imgMoney"
             app:layout_constraintTop_toTopOf="@+id/imgMoney"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/currencyType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="@{expense.currencyType}"
+            android:layout_marginStart="20dp"
+            android:text="@string/emptyString"
+            android:textAlignment="viewStart"
             android:textColor="@color/black"
-            android:textSize="12sp"
+            android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/expensePrice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/expensePrice"
             app:layout_constraintTop_toTopOf="@+id/expensePrice"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/expenseNumber"
@@ -108,7 +115,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:gravity="center"
-            android:text="@{expense.expenseNumber}"
+            android:text="@string/emptyString"
             android:textColor="@color/black"
             android:textSize="12sp"
             android:textStyle="bold"

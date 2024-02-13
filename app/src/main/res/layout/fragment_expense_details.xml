@@ -66,16 +66,18 @@
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:layout_marginStart="224dp"
-            android:src="@drawable/price_icon"
+            android:src="@drawable/price_icon_type"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
             tools:layout_editor_absoluteY="168dp" />
 
         <TextView
             android:id="@+id/expenseDetailsPrice"
-            android:layout_width="77dp"
-            android:layout_height="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
-            android:text=" "
+            android:gravity="center"
+            android:textAlignment="center"
+            android:text="@string/emptyString"
             android:textColor="@color/black"
             android:textSize="12sp"
             android:textStyle="bold"
@@ -90,7 +92,7 @@
             android:layout_height="23dp"
             android:layout_marginStart="4dp"
             android:gravity="center"
-            android:text=" "
+            android:text=""
             android:textColor="@color/black"
             android:textSize="12sp"
             android:textStyle="bold"
@@ -101,17 +103,19 @@
 
         <TextView
             android:id="@+id/currencyDetailsType"
-            android:layout_width="19dp"
-            android:layout_height="15dp"
-            android:layout_marginStart="96dp"
-            android:text=" "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:text="@string/emptyString"
             android:textColor="@color/black"
             android:textSize="12sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/imgMoney"
             app:layout_constraintStart_toEndOf="@+id/imgMoney"
             app:layout_constraintTop_toTopOf="@+id/imgMoney"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="1.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

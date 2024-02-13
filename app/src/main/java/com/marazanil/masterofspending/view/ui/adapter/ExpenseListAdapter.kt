@@ -20,6 +20,10 @@ class ExpenseListAdapter(
     override fun onBindViewHolder(holder: ExpenseViewHolder, position: Int) {
         val expense = expenses[position]
         with(holder.binding) {
+            expenseName.text = expense.expenseName
+            expenseNumber.text = expense.expenseNumber.toString()
+            expensePrice.text = expense.expensePrice
+            currencyType.text = expense.currencyType
         }
     }
 

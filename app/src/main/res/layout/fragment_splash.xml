@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="view.ui.fragments.splashFragment.SplashFragment">
 
-<ImageView
+    <ImageView
         android:id="@+id/imageView3"
         android:layout_width="875dp"
         android:layout_height="1778dp"
@@ -14,22 +14,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.513"
+        app:layout_constraintVertical_bias="0.486"
         app:srcCompat="@mipmap/ic_background_screen_foreground" />
 
-    <Button
-        android:id="@+id/appLoginButton"
-        android:layout_width="205dp"
-        android:layout_height="83dp"
-        android:text="@string/letsGoText"
-        android:textStyle="bold"
-        android:backgroundTint="#ffffff"
-        android:textSize="20sp"
-        android:textAlignment="center"
-        android:textColor="#7952b3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

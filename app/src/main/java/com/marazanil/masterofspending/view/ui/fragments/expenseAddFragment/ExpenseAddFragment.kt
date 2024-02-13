@@ -1,6 +1,7 @@
 package com.marazanil.masterofspending.view.ui.fragments.expenseAddFragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -65,7 +66,10 @@ class ExpenseAddFragment : Fragment() {
         val expenseDao = ExpenseDatabase.getDatabase(requireContext())?.expenseDao()
         expenseDao?.insertExpense(expense)
         Toast.makeText(context, "Harcama başarıyla kaydedildi", Toast.LENGTH_SHORT).show()
+        showSavedExpenses()
+        logSavedExpenses()
         findNavController().navigate(R.id.action_expenseAddFragment_to_expenseListFragment)
+
     }
 
     private fun getSelectedCurrency(): String {
@@ -77,6 +81,26 @@ class ExpenseAddFragment : Fragment() {
             else -> "TL" // Varsayılan değer
         }
     }
+    private fun showSavedExpenses() {
+        val expenseDao = ExpenseDatabase.getDatabase(requireContext())?.expenseDao()
+        val expenses = expenseDao?.getAllExpenses()
+        expenses?.let {
+            for (expense in it) {
+                Toast.makeText(context, "ID: ${expense.expenseId}, Name: ${expense.expenseName}, Price: ${expense.expensePrice}", Toast.LENGTH_LONG).show()
+            }
+        }
+    }
+
+    private fun logSavedExpenses() {
+        val expenseDao = ExpenseDatabase.getDatabase(requireContext())?.expenseDao()
+        val expenses = expenseDao?.getAllExpenses()
+        expenses?.forEach { expense ->
+            Log.d("Made Expenses", "ID: ${expense.expenseId}, Name: ${expense.expenseName}," +
+                    "Details: ${expense.expenseDetails}, Number: ${expense.expenseNumber}, Price: ${expense.expensePrice}, Currency: ${expense.currencyType}")
+        }
+    }
+
+
 
     override fun onDestroyView() {
         super.onDestroyView()

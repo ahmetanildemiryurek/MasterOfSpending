@@ -51,7 +51,7 @@ class ExpenseViewModel(private val repository: ExpenseRepository , private val e
         viewModelScope.launch {
             try {
                 repository.deleteExpense(expense)
-                loadExpenses() // Refresh the list after deletion
+                loadExpenses()
             } catch (e: Exception) {
                 _errorMessage.value = "Failed to delete expense: ${e.message}"
             }

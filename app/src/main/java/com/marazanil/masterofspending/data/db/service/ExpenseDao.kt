@@ -12,14 +12,14 @@ interface ExpenseDao {
     @Insert
      fun insertExpense(expense: ExpenseEntity)
 
-    @Delete
-     fun deleteExpense(expense: ExpenseEntity)
+    @Query("DELETE FROM expenses WHERE expenseId = :expenseId")
+    fun deleteExpenseById(expenseId: Int): Int
 
     @Query("SELECT * FROM expenses")
      fun getAllExpenses(): List<ExpenseEntity>
 
-    @Query("SELECT * FROM expenses WHERE expenseId = :id")
-     fun getExpenseById(id: Int): ExpenseEntity?
+    @Query("SELECT * FROM expenses WHERE expenseId = :expenseId")
+     fun getExpenseById(expenseId: Int): ExpenseEntity?
 }
 
 

@@ -57,7 +57,7 @@ class ExpenseAddFragment : Fragment() {
             expenseId = 0, // otomatik id ataması yapması için sıfır verdim
             expenseName = expenseName,
             expenseDetails = expenseDetails,
-            expenseNumber = null,// otomatik numara ataması yapması için sıfır verdim
+            expenseNumber = null,//numarayı id ile eşlemek için null verdim
             expensePrice = expensePrice,
             currencyType = currencyType
         )

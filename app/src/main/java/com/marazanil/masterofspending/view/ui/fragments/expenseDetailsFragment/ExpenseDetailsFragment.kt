@@ -4,8 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import com.marazanil.masterofspending.R
 import com.marazanil.masterofspending.data.db.ExpenseDatabase
 import com.marazanil.masterofspending.data.db.entity.ExpenseEntity
 import com.marazanil.masterofspending.databinding.FragmentExpenseDetailsBinding
@@ -37,15 +40,21 @@ class ExpenseDetailsFragment : Fragment() {
                 displayExpenseDetails(it)
             }
         }
+        backToListFragment()
     }
-
+    private fun backToListFragment() {
+        binding.detailsPageBackButton.setOnClickListener {
+            findNavController().navigate(R.id.action_expenseDetailsFragment_to_expenseListFragment)
+            Toast.makeText(context, "Harcamalar Ekranına Geri Dönüldü!", Toast.LENGTH_SHORT).show()
+        }
+    }
     private fun displayExpenseDetails(expense: ExpenseEntity?) {
         expense?.let {
             binding.expenseDetailsName.text = it.expenseName
             binding.expenseDetailsPrice.text = it.expensePrice
             binding.currencyDetailsType.text = it.currencyType
             binding.expenseDetails.text = it.expenseDetails
-            binding.expenseDetailsNumber.text = it.expenseNumber.toString()
+            binding.expenseDetailsNumber.text = it.expenseId.toString()
         }
     }
 

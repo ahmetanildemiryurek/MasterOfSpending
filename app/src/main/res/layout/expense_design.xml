@@ -34,7 +34,7 @@
         android:layout_height="130dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="#80E498">
+        android:background="#90D6D0">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline2"
@@ -117,7 +117,7 @@
             android:gravity="center"
             android:text="@string/emptyString"
             android:textColor="@color/black"
-            android:textSize="12sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

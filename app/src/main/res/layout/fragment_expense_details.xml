@@ -7,12 +7,25 @@
     android:layout_height="match_parent"
     tools:context=".view.ui.fragments.expenseDetailsFragment.ExpenseDetailsFragment">
 
+    <ImageView
+        android:id="@+id/detailsPageBackButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="36dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/ic_back_icon2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.921"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/expensesContainerTop"
         android:layout_width="match_parent"
         android:layout_height="213dp"
         android:layout_marginTop="204dp"
-        android:background="#fff"
+        android:background="@drawable/rounded_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,6 +38,8 @@
             android:orientation="vertical"
             app:layout_constraintGuide_end="381dp" />
 
+
+
         <TextView
             android:id="@+id/expenseDetailsName"
             android:layout_width="184dp"
@@ -36,7 +51,7 @@
             android:gravity="center"
             android:text="@string/expenseDetailsNameArea"
             android:textColor="#CC0C0C"
-            android:textSize="14sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -54,7 +69,7 @@
             android:gravity="center"
             android:text="@string/spendingdetails"
             android:textColor="#000000"
-            android:textSize="12sp"
+            android:textSize="22sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.789"
@@ -81,7 +96,7 @@
             android:text="@string/emptyString"
             android:textAlignment="viewStart"
             android:textColor="@color/black"
-            android:textSize="15sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/imgMoney"
             app:layout_constraintEnd_toEndOf="parent"
@@ -98,7 +113,7 @@
             android:text="@string/emptyString"
             android:textAlignment="viewStart"
             android:textColor="@color/black"
-            android:textSize="15sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/expenseDetailsPrice"
             app:layout_constraintEnd_toEndOf="parent"
@@ -116,14 +131,13 @@
             android:gravity="center"
             android:text=""
             android:textColor="@color/black"
-            android:textSize="12sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.504" />
 
-            app:layout_constraintVertical_bias="1.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

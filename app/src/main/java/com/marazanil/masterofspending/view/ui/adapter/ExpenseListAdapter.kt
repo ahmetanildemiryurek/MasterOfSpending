@@ -7,10 +7,18 @@ import com.marazanil.masterofspending.data.db.entity.ExpenseEntity
 import com.marazanil.masterofspending.databinding.ExpenseDesignBinding
 
 class ExpenseListAdapter(
-    private val expenses: List<ExpenseEntity>
+    private val expenses: List<ExpenseEntity>,
+    private val onExpenseClick: (Int) -> Unit
 ) : RecyclerView.Adapter<ExpenseListAdapter.ExpenseViewHolder>() {
 
-    class ExpenseViewHolder(val binding: ExpenseDesignBinding) : RecyclerView.ViewHolder(binding.root)
+    inner class ExpenseViewHolder(val binding: ExpenseDesignBinding) : RecyclerView.ViewHolder(binding.root) {
+        init {
+            itemView.setOnClickListener {
+                val expenseId = expenses[adapterPosition].expenseId
+                onExpenseClick(expenseId.toInt())
+            }
+        }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExpenseViewHolder {
         val binding = ExpenseDesignBinding.inflate(LayoutInflater.from(parent.context), parent, false)

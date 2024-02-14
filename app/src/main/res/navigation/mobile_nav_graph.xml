@@ -23,7 +23,7 @@
             android:id="@+id/action_expenseListFragment_to_expenseAddFragment"
             app:destination="@id/expenseAddFragment" />
         <action
-            android:id="@+id/action_to_expenseListFragment_to_expenseDetailsFragment"
+            android:id="@+id/action_expenseListFragment_to_expenseDetailsFragment"
             app:destination="@id/expenseDetailsFragment" />
 
     </fragment>

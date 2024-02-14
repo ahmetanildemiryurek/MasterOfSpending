@@ -38,7 +38,12 @@ class ExpenseListFragment : Fragment() {
         val expenseDao = ExpenseDatabase.getDatabase(requireContext())?.expenseDao()
         val expenses = expenseDao?.getAllExpenses()
         expenses?.let {
-            val adapter = ExpenseListAdapter(it)
+            val adapter = ExpenseListAdapter(it){expenseId ->
+                val bundle = Bundle().apply {
+                    putInt("expenseId", expenseId)
+                }
+                findNavController().navigate(R.id.action_expenseListFragment_to_expenseDetailsFragment, bundle)
+            }
             binding.expenseListCardView.adapter = adapter
             binding.expenseListCardView.layoutManager = LinearLayoutManager(context)
         }

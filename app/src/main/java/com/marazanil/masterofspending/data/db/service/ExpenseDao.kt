@@ -10,15 +10,16 @@ import retrofit2.http.GET
 @Dao
 interface ExpenseDao {
     @Insert
-    fun insertExpense(expense: ExpenseEntity)
+     fun insertExpense(expense: ExpenseEntity)
+
     @Delete
      fun deleteExpense(expense: ExpenseEntity)
+
     @Query("SELECT * FROM expenses")
      fun getAllExpenses(): List<ExpenseEntity>
+
     @Query("SELECT * FROM expenses WHERE expenseId = :id")
-    fun getExpenseById(id: Int): ExpenseEntity?
-
-
-
-
+     fun getExpenseById(id: Int): ExpenseEntity?
 }
+
+

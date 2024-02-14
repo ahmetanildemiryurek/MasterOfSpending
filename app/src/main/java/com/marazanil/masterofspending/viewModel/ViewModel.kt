@@ -6,19 +6,17 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.marazanil.masterofspending.data.ExpenseRepository
 import com.marazanil.masterofspending.data.db.entity.ExpenseEntity
+import com.marazanil.masterofspending.data.db.service.ExpenseDao
 import kotlinx.coroutines.launch
 
-class ExpenseViewModel(private val repository: ExpenseRepository) : ViewModel() {
+class ExpenseViewModel(private val repository: ExpenseRepository , private val expenseDao: ExpenseDao) : ViewModel() {
 
-    // LiveData to hold the list of expenses
     private val _expenses = MutableLiveData<List<ExpenseEntity>>()
     val expenses: LiveData<List<ExpenseEntity>> = _expenses
 
-    // LiveData to handle navigation events, like opening the details or add screen
     private val _navigateToAddExpense = MutableLiveData<Boolean>()
     val navigateToAddExpense: LiveData<Boolean> = _navigateToAddExpense
 
-    // LiveData to handle error messages or notifications
     private val _errorMessage = MutableLiveData<String>()
     val errorMessage: LiveData<String> = _errorMessage
 
@@ -29,6 +27,7 @@ class ExpenseViewModel(private val repository: ExpenseRepository) : ViewModel() 
     private fun loadExpenses() {
         viewModelScope.launch {
             try {
+                val expenses = expenseDao.getAllExpenses()
                 val expenseList = repository.getAllExpenses()
                 _expenses.value = expenseList
             } catch (e: Exception) {
@@ -41,7 +40,7 @@ class ExpenseViewModel(private val repository: ExpenseRepository) : ViewModel() 
         viewModelScope.launch {
             try {
                 repository.insertExpense(expense)
-                loadExpenses() // Refresh the list after adding
+                loadExpenses()
             } catch (e: Exception) {
                 _errorMessage.value = "Failed to add expense: ${e.message}"
             }
@@ -59,12 +58,10 @@ class ExpenseViewModel(private val repository: ExpenseRepository) : ViewModel() 
         }
     }
 
-    // Call this method when the add expense FAB is clicked
     fun onAddExpenseClicked() {
         _navigateToAddExpense.value = true
     }
 
-    // Call this after navigating to the add expense screen
     fun onNavigatedToAddExpense() {
         _navigateToAddExpense.value = false
     }

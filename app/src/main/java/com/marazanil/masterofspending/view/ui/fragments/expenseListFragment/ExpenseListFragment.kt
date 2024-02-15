@@ -16,6 +16,8 @@ import com.marazanil.masterofspending.view.ui.adapter.ExpenseListAdapter
 class ExpenseListFragment : Fragment() {
 
     private var _binding: FragmentExpenseListBinding? = null
+    private var lastCheckedId: Int? = null
+
     private val binding get() = _binding!!
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -26,7 +28,32 @@ class ExpenseListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        loadExpenses()
+        loadExpenses() // Başlangıçta tüm harcamaları yükleyecek
+
+        val listener = View.OnClickListener { view ->
+            val isCheckedAgain = lastCheckedId == view.id
+            if (isCheckedAgain) {
+                binding.currencyFilterGroup.clearCheck()
+                lastCheckedId = null
+                loadExpenses() // Filtresiz tüm harcamaları yeniden yükleyecek
+            } else {
+                lastCheckedId = view.id
+                val currencyType = when (view.id) {
+                    R.id.radioButtonDolar -> "USD"
+                    R.id.radioButtonTL -> "TL"
+                    R.id.radioButtonEUR -> "EUR"
+                    R.id.radioButtonGBP -> "GBP"
+                    else -> null
+                }
+                loadExpenses(currencyType)
+            }
+        }
+
+        // Her bir RadioButton için tıklama dinleyicisi atadım
+        binding.radioButtonDolar.setOnClickListener(listener)
+        binding.radioButtonTL.setOnClickListener(listener)
+        binding.radioButtonEUR.setOnClickListener(listener)
+        binding.radioButtonGBP.setOnClickListener(listener)
 
         binding.buttonAddExpense.setOnClickListener {
             findNavController().navigate(R.id.action_expenseListFragment_to_expenseAddFragment)
@@ -34,11 +61,14 @@ class ExpenseListFragment : Fragment() {
         }
     }
 
-    private fun loadExpenses() {
+    private fun loadExpenses(currencyType: String? = null) {
         val expenseDao = ExpenseDatabase.getDatabase(requireContext())?.expenseDao()
-        val expenses = expenseDao?.getAllExpenses()
+        val expenses = currencyType?.let {
+            expenseDao?.getExpensesByCurrencyType(it)
+        } ?: expenseDao?.getAllExpenses()
+
         expenses?.let {
-            val adapter = ExpenseListAdapter(it){expenseId ->
+            val adapter = ExpenseListAdapter(it) { expenseId ->
                 val bundle = Bundle().apply {
                     putInt("expenseId", expenseId)
                 }

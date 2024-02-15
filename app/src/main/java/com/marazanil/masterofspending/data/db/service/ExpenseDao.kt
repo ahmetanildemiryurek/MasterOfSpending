@@ -20,6 +20,9 @@ interface ExpenseDao {
 
     @Query("SELECT * FROM expenses WHERE expenseId = :expenseId")
      fun getExpenseById(expenseId: Int): ExpenseEntity?
+
+    @Query("SELECT * FROM expenses WHERE currencyType = :currencyType")
+    fun getExpensesByCurrencyType(currencyType: String): List<ExpenseEntity>
 }
 
 

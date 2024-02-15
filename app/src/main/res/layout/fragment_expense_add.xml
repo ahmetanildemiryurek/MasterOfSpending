@@ -35,9 +35,9 @@
         android:layout_marginStart="24dp"
         android:text="@string/textViewHeader1"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/detailsPageBackButton"
+        app:layout_constraintBottom_toBottomOf="@+id/backButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/detailsPageBackButton" />
+        app:layout_constraintTop_toTopOf="@+id/backButton" />
 
     <Button
         android:id="@+id/detailsPageAddButton"

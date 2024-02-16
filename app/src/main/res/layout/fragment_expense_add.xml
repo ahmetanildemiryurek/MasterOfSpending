@@ -1,141 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.ui.fragments.expenseAddFragment.ExpenseAddFragment">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutExpense"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="24dp"
-        app:boxCornerRadiusBottomEnd="30dp"
-        app:boxCornerRadiusBottomStart="30dp"
-        app:boxCornerRadiusTopEnd="30dp"
-        app:boxCornerRadiusTopStart="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewHeader">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editTextDetails"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/addDetails" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <TextView
-        android:id="@+id/textViewHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:text="@string/textViewHeader1"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/backButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/backButton" />
-
-    <Button
-        android:id="@+id/detailsPageAddButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="104dp"
-        android:layout_marginBottom="24dp"
-        android:text="@string/detailsPageAddButton"
-        app:cornerRadius="30dp"
-        android:backgroundTint="#4CAF50"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/TextInputLayoutExpense"
-        app:layout_constraintTop_toBottomOf="@+id/chipGroupCurrency"
-        app:layout_constraintVertical_bias="0.379" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/TextInputLayoutExpense"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="20dp"
-        app:boxCornerRadiusBottomEnd="30dp"
-        app:boxCornerRadiusBottomStart="30dp"
-        app:boxCornerRadiusTopEnd="30dp"
-        app:boxCornerRadiusTopStart="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutExpense">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editTextExpense"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/addDetailsPageExpenseEditText"
-            android:inputType="text" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/TextInputLayoutExpensePrice"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="20dp"
-        app:boxCornerRadiusBottomEnd="30dp"
-        app:boxCornerRadiusBottomStart="30dp"
-        app:boxCornerRadiusTopEnd="30dp"
-        app:boxCornerRadiusTopStart="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TextInputLayoutExpense">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editTextExpensePrice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/addDetailsPageExpensePriceEditText"
-            android:inputType="text" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <ImageView
-        android:id="@+id/backButton"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:clickable="true"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:src="@drawable/ic_back_icon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:focusable="true" />
 
 
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chipGroupCurrency"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TextInputLayoutExpense"
+        app:layout_constraintTop_toBottomOf="@+id/TextInputLayoutExpensePrice"
         app:selectionRequired="true"
         app:singleLine="true"
         app:singleSelection="true">
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/tlChip"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="@string/tlText"
-            android:textColor="@color/black"
-            app:chipBackgroundColor="#AFE6B1" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/dollarChip"
@@ -162,4 +46,121 @@
             android:text="@string/sterlinText" />
     </com.google.android.material.chip.ChipGroup>
 
+    <TextView
+        android:id="@+id/textViewConvertedPrice"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/textViewConvertedPriceText"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chipGroupCurrency" />
+
+    <Button
+        android:id="@+id/detailsPageAddButton"
+        android:layout_width="105dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="472dp"
+        android:backgroundTint="#4CAF50"
+        android:text="@string/detailsPageAddButton"
+        app:cornerRadius="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textInputLayoutExpense" />
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_back_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="@string/textViewHeader1"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/backButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/backButton" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutExpense"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
+        app:boxCornerRadiusBottomEnd="30dp"
+        app:boxCornerRadiusBottomStart="30dp"
+        app:boxCornerRadiusTopEnd="30dp"
+        app:boxCornerRadiusTopStart="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHeader">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/addDetails" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/TextInputLayoutExpense"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        app:boxCornerRadiusBottomEnd="30dp"
+        app:boxCornerRadiusBottomStart="30dp"
+        app:boxCornerRadiusTopEnd="30dp"
+        app:boxCornerRadiusTopStart="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutExpense">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextExpense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/addDetailsPageExpenseEditText"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/TextInputLayoutExpensePrice"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        app:boxCornerRadiusBottomEnd="30dp"
+        app:boxCornerRadiusBottomStart="30dp"
+        app:boxCornerRadiusTopEnd="30dp"
+        app:boxCornerRadiusTopStart="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextInputLayoutExpense">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextExpensePrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/addDetailsPageExpensePriceEditText"
+            android:inputType="numberDecimal" />
+    </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,7 +13,7 @@ class SplashFragment : Fragment(R.layout.fragment_splash) { // Layout dosyasın�
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Handler(Looper.getMainLooper()).postDelayed({
-            // 5 saniye bekledikten sonra expenseListFragment'e yönlendirme.
+            // 5 saniye bekledikten sonra expenseListFragment'e yönlendir.
             findNavController().navigate(R.id.action_splashFragment_to_expenseListFragment)
         }, 5000) // 5 saniye bekletme süresi.
     }

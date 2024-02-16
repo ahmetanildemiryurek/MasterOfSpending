@@ -10,7 +10,7 @@ import retrofit2.http.GET
 @Dao
 interface ExpenseDao {
     @Insert
-     fun insertExpense(expense: ExpenseEntity)
+    fun insertExpense(expense: ExpenseEntity)
 
     @Query("DELETE FROM expenses WHERE expenseId = :expenseId")
     fun deleteExpenseById(expenseId: Int): Int
@@ -23,6 +23,7 @@ interface ExpenseDao {
 
     @Query("SELECT * FROM expenses WHERE currencyType = :currencyType")
     fun getExpensesByCurrencyType(currencyType: String): List<ExpenseEntity>
+
 }
 
 

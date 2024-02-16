@@ -10,7 +10,8 @@
     <string name="textViewHeader3">Harcama Detayı</string>
     <string name="detailsPageAddButton">EKLE</string>
     <string name="addDetailsPageExpenseEditText">Harcama Türü</string>
-    <string name="addDetailsPageExpensePriceEditText">Harcama Fiyatı</string>
+    <string name="addDetailsPageExpensePriceEditText">Harcama Fiyatı ( TL cinsinden )</string>
+    <string name="textViewConvertedPriceText">Dönüştürülmüş Tutar: 0 TL</string>
     <string name="tlText">₺</string>
     <string name="dolarText">$</string>
     <string name="euroText">€</string>
